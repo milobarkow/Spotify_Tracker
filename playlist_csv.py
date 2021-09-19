@@ -1,10 +1,7 @@
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 import pandas as pd
-import time
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-import json
+
 
 CLIENTID = '7a9404710e8b4fcea7f0e5634f000c96'
 CLIENTSECRET = '9b35c0b6042147e898aec07ff46a2e0b'
@@ -54,14 +51,3 @@ for key in final:
         final[key].append(' ')
 final_csv = pd.DataFrame(final).to_csv('final.csv', index=False)
 
-# scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
-#          "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
-#
-# credentials = ServiceAccountCredentials.from_json_keyfile_name('credentials.json', scope)
-# client = gspread.authorize(credentials)
-#
-# spreadsheet = client.open('CSV-to-Google-Sheet')
-#
-# with open('final.csv', 'r') as file:
-#     content = file.read()
-#     client.import_csv(spreadsheet.id, data=content)
