@@ -6,9 +6,6 @@ Milo Barkow, Feburary 19th, 2022
 
 """
 
-
-
-
 import spotipy
 import os
 from spotipy.oauth2 import SpotifyOAuth, SpotifyPKCE
