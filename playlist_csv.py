@@ -1,11 +1,22 @@
+"""
+
+Creates a spotify OAuth cllient to fetch data from a users spotify account. Returns a csv file of user's complete playlist data.
+
+Milo Barkow, Feburary 19th, 2022
+
+"""
+
+
+
+
 import spotipy
 import os
 from spotipy.oauth2 import SpotifyOAuth, SpotifyPKCE
 import pandas as pd
 
-CLIENTID = os.environ['CLIENTID']
-redirect_uri = 'http://localhost:8888/callback'
-scope = 'playlist-read-private user-library-read'
+CLIENTID = os.environ['CLIENTID']                 # insert app client ID from spotify dashboard
+redirect_uri = 'http://localhost:8888/callback'   # redurect uri - same as spotify dashboard
+scope = 'playlist-read-private user-library-read' # scope of auththorization, can be changed
 
 auth_PKCE = SpotifyPKCE(client_id=CLIENTID,
                         redirect_uri=redirect_uri,
